@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 # import and read in data
 
+url = 'https://www.kaggle.com/kritikseth/us-airbnb-open-data/download'
+
 pd.set_option('display.max_columns', 20)
 airbnb_file = 'AB_US_2020.csv'
 df_airbnb = pd.read_csv(airbnb_file, low_memory=False)
@@ -18,4 +20,5 @@ dummy_dum = pd.get_dummies(df_airbb_drop['room_type'])
 
 # create another table with dummy values for room type
 
-df_bnb_withdummy = pd.concat([df_airbnb, dummy_dum], axis = 1, sort = False)
+df_airbnb_withdummy = pd.concat([df_airbnb, dummy_dum], axis = 1, sort = False)
+
