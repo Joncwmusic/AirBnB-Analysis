@@ -5,10 +5,10 @@ from wordcloud import WordCloud, STOPWORDS
 
 
 pd.set_option('display.max_columns', 20)
-airbnb_file = 'C:/Users/ICD-15/Predict Airbnb Project/AB_US_2020.csv/AB_US_2020.csv'
+airbnb_file = 'AB_US_2020.csv/AB_US_2020.csv'
 df_airbnb = pd.read_csv(airbnb_file, low_memory=False)
-df_numerical = pd.read_csv('C:/Users/ICD-15/Predict Airbnb Project/All_Numerical.csv')
-df_location = pd.read_csv('C:/Users/ICD-15/Predict Airbnb Project/Location_Data.csv')
+df_numerical = pd.read_csv('All_Numerical.csv')
+df_location = pd.read_csv('Location_Data.csv')
 
 
 # Create a word cloud to see which words are most popular amongst airbnb listings
