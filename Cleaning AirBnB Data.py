@@ -20,5 +20,7 @@ dummy_dum = pd.get_dummies(df_airbb_drop['room_type'])
 
 # create another table with dummy values for room type
 
-df_airbnb_withdummy = pd.concat([df_airbnb, dummy_dum], axis = 1, sort = False)
+df_airbnb_withdummy = pd.concat([df_airbnb_drop, dummy_dum], axis = 1, sort = False)
+df_airbnb_withdummy.drop(['name', 'room_type'], inplace = True, axis = 1)
+df_bnb_withdummy.to_csv('All_Numerical.csv')
 
