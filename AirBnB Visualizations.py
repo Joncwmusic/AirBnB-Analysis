@@ -42,4 +42,12 @@ ax4 = np.log2(df_numerical['calculated_host_listings_count']+1).plot(kind = 'his
 plt.figure()
 ax5 = df_numerical['availability_365'].plot(kind = 'hist', title = 'availability', bins = 36)
 # some spikes in the histogram around 90 days, 180 days, and 365 days.
+
+ax6 = df_numerical.plot(kind = 'scatter', x = 'number_of_reviews', y = 'logPrice')
+ax7 = df_numerical.plot(kind = 'scatter', x = 'reviews_per_month', y = 'logPrice')
+# review metrics wrt logprice show that the most reviewed bnbs are the moderately priced ones.
+# bnbs that may have lower reviews lead to less customers and less reviews implying a reduction in price to get more customers
+
+ax8 = df_numerical.plot(kind = 'scatter', x = 'availability_365', y = 'logPrice')
+ax9 = df_numerical.plot(kind = 'scatter', x = 'minimum_nights', y = 'logPrice')
 plt.show()
