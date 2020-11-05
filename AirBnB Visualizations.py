@@ -28,3 +28,18 @@ stopwords = set(STOPWORDS)
 wordcloud = WordCloud(width = 800, height = 800, background_color ='white', stopwords = stopwords, min_font_size = 10).generate(comment_words)
 plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud)
+
+
+# histograms of data. If data has heavy right skew, log is applied to kind of approximate normality
+
+ax1 = df_numerical['number_of_reviews'].plot(kind='hist', title='Num of Reviews')
+plt.figure()
+ax2 = np.log2(df_numerical['number_of_reviews']+1).plot(kind = 'hist', title = 'Log Num of Reviews')
+plt.figure()
+ax3 = np.log10(df_numerical['reviews_per_month']+1).plot(kind = 'hist', title = 'Reviews Per Month')
+plt.figure()
+ax4 = np.log2(df_numerical['calculated_host_listings_count']+1).plot(kind = 'hist', title = 'host listings count')
+plt.figure()
+ax5 = df_numerical['availability_365'].plot(kind = 'hist', title = 'availability', bins = 36)
+# some spikes in the histogram around 90 days, 180 days, and 365 days.
+plt.show()
