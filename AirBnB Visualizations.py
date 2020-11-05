@@ -28,6 +28,8 @@ stopwords = set(STOPWORDS)
 wordcloud = WordCloud(width = 800, height = 800, background_color ='white', stopwords = stopwords, min_font_size = 10).generate(comment_words)
 plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud)
+# biggest word cloud words: private, room, charming, studio, downtown, walk, house, ocean view (correlated with location probably), home, walk, aprtment, one bedroom, beach
+# should convert the list of words into a new set of dummy column. 100 most poular words vs. 200K plus data points isn't a regression risk necessarily 
 
 
 # histograms of data. If data has heavy right skew, log is applied to kind of approximate normality
