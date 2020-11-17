@@ -33,3 +33,10 @@ Outline:
     A. Raw Data
     B. Mold Data to BnB data by essentially creating a test set
     C. Predict the price
+
+Notes:
+  Using Foursquare's API can I find the number of local businesses nearby each airbnb?
+  Could I cluster the places within a neighborhood or location in order to sort of see how dense a particular part of town is.
+  What if the price of an airbnb goes up or down based on how many other air bnbs are closeby
+  In other words for each of the 200K+ datapoints count how many other data points are in the lat long radius (manhattan metric might be best since streets)
+  
