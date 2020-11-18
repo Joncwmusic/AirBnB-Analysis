@@ -19,10 +19,11 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import r2_score
 
 pd.set_option('display.max_columns', 20)
-airbnb_file = 'C:/Users/ICD-15/Predict Airbnb Project/AB_US_2020.csv/AB_US_2020.csv'
+airbnb_file = 'AB_US_2020.csv/AB_US_2020.csv'
 df_airbnb = pd.read_csv(airbnb_file, low_memory=False)
-df_numerical = pd.read_csv('C:/Users/ICD-15/Predict Airbnb Project/All_Numerical.csv')
-df_location = pd.read_csv('C:/Users/ICD-15/Predict Airbnb Project/Location_Data.csv')
+df_numerical = pd.read_csv('All_Numerical.csv')
+df_location = pd.read_csv('Location_Data.csv')
+df_numerical_with_words = pd.read_csv('All_Numerical With Words.csv')
 
 # get a correlation matrix
 # print(df_numerical.corr())
@@ -72,3 +73,16 @@ print(r2polytrain, r2polytest)
 # print(yhat_train, y_train)
 # yhat_test = models.predict(X_test)
 # print(yhat_test, y_test)
+
+
+X2_train, X2_test, y2_train, y2_test = train_test_split(df_numerical_with_words.drop(['logPrice', 'price'], axis = 1), df_numerical_with_words[['logPrice']])
+
+# linear model but with the word data
+# r2 falls around 0.36 for both the training and testing set
+lm3 = LinearRegression(normalize=True)
+lm3.fit(X2_train, y2_train)
+y2hat_train = lm3.predict(X2_train)
+y2hat_test = lm3.predict(X2_test)
+r2score_train = r2_score(y2_train, y2hat_train)
+r2score_test = r2_score(y2_test, y2hat_test)
+print(r2score_test, r2score_train)
