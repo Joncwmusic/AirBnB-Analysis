@@ -78,8 +78,9 @@ for word in wordlist:
 
 # combine everything into one big dataframe
 df_airbnb_with_words = pd.concat([df_airbnb, df_word], axis=1)
-df_airbnb_allnums = pd.concat([df_bnb_withdummy, df_airbnb_with_words], axis=1)
+df_airbnb_allnums = pd.concat([df_bnb_withdummy, df_word], axis=1)
+df_airbnb_allnums.drop(['name'], inplace = True, axis = 1)
 
-#save the files
-df_airbnb_with_words.to_csv('Airbnb With Words')
-df_airbnb_allnums.to_csv('All Numerical With Words')
+# save the files
+df_airbnb_with_words.to_csv('Airbnb With Words.csv')
+df_airbnb_allnums.to_csv('All Numerical With Words.csv')
