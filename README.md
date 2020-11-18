@@ -6,36 +6,40 @@ https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 
 Links to datasets
 
-Goal: So the goal of this is to compare real estate data with air bnb data. Ideally, the question I want to answer is:
+Goal: So the goal of this is to compare real estate data with air bnb data. Ideally, the question to answer is:
 "Is it worth it to buy a house to run a full time airbnb?"
 
 Outline:
 
   I. Collect and Clean the BnB Data
 
-    A. Raw Data                                              #Done
+    A. Raw Data          Import that stuff
+      
+    B. Useful Data        From the data what seems important
     
-    B. Useful Data                                           #Done
+    C. Numerical Data      Get dummies from each categorical variable that seems important
     
-    C. Numerical Data                                        #Done
+    D. Useful Numerical Data   Trim some of the fat
     
-    D. Useful Numerical Data                                 #Nope
+    E. Create dummy variables for 100 most common words: 
+      
+      put all the words into a dictionary and give counts for each of them
+      then find the top 100
+      For each record in df, create dummy dataframe where
     
-    E. Create dummy variables for 100 most common words      #Nope
+    F. Deal with severe outliers       
     
-    F. Deal with severe outliers                             #Nope
-    
-    G. Group by type of bnb                                  #Nope
+    G. Group by type of bnb      
   
   II. Create Exploratory Visualizations                      
     
-    A. Make some Histograms and scatter plots                #Done
+    A. Make some Histograms and scatter plots       
     
-    B. Create a wordcloud for listing names                  #Done
+    B. Create a wordcloud for listing names     
     
-    C. aggregate similar visualizations into a single file   #Nope
+    C. aggregate similar visualizations into a single file   
     
-    D. Make them pretty                                      #Nope
+    D. Make them pretty     
   
   III. Create a predictive price model for Airbnbs
     
