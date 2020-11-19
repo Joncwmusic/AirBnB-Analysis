@@ -4,6 +4,13 @@
 # 2. Removing superficial information like ID's, names, neighborhood names 
 # 2.5 which should be covered by latitude longitude data anyways but it might also be helpful to group by city or neighborhood
 # 3. Make sure the top 100 words are dummy variabled
+# 4.1 Group data by City
+# 4.2 Within each city Cluster strictly based on location and add cluster labels
+# 4.3 for each cluster label find a centroid
+# 4.4 Once you have each cluster centroid, use foursquare API to find num of nearby shops, restaurants, and activities within a 20 mile radius
+# 4.5 Record that number for each cluster
+# 4.6 Join the cluster centroid table with the original data table so that each bnb has a metric of num_shop, num_rest and so on...
+# 4.7 Maybe experiement with other clustering algorithms like DBSCAN (more dense clusters will have more to do nearby)
 
 import pandas as pd
 import numpy as np
