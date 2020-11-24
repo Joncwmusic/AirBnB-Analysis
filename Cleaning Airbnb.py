@@ -1,3 +1,9 @@
+# What does this do?
+# imports the Airbnb dataset
+# finds the 100 most common 'words' used in bnb titles
+# outputs numerical data for each city and outputs each city with numerical data as its own table
+
+
 import pandas as pd
 import numpy as np
 from wordcloud import WordCloud, STOPWORDS
@@ -6,7 +12,7 @@ from collections import Counter
 #  import and read in data
 
 pd.set_option('display.max_columns', 10)
-airbnb_file = 'C:/Users/ICD-15/Predict Airbnb Project/AB_US_2020.csv/AB_US_2020.csv'
+airbnb_file = 'AB_US_2020.csv'
 df_airbnb = pd.read_csv(airbnb_file, low_memory=False)
 df_airbnb['reviews_per_month'] = df_airbnb['reviews_per_month'].fillna(0)
 # read in airbnb csv and send nulls to 0
