@@ -41,7 +41,7 @@ Outline:
     
     D. Make them pretty     
   
-  III. Create a predictive price model for Airbnbs
+  III. Create a predictive price model for Airbnbs (This should really predict the number of reviews based on price)
     
     A. Linear Regression Model
     
@@ -50,6 +50,11 @@ Outline:
     C. Measure accuracy of models with cross validation and R2
     
     D. Models without the words
+    
+    F. Models with the words
+    
+    G. Models for each city since each city probably has more structure while 
+    an overall look of all bnbs across the country might be underfit even with a poly model
     
     E. Model for each bnb type
   
